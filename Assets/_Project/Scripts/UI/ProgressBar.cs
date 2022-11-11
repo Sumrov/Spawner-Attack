@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProgressBar : Bar
 {
-    [SerializeField] private Spawner _spawber;
+    [SerializeField] private Spawner _spawner;
 
     private void OnEnable()
     {
-        _spawber.EnemyCountChanged += OnValueChanged;
+        _spawner.EnemyCountChanged += OnValueChanged;
         Slider.value = 0;
     }
 
     private void OnDisable()
     {
-        _spawber.EnemyCountChanged -= OnValueChanged;
+        _spawner.EnemyCountChanged -= OnValueChanged;
     }
 }
